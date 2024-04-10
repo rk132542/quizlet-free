@@ -2,16 +2,18 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import google from '$lib/images/google.svg';
 </script>
 
 <header>
-	<div class="corner">
+	<div class="corner start">
 		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+			<!-- <img src={logo} alt="SvelteKit" /> -->
+			<h1>Quizwit</h1>
 		</a>
 	</div>
 
-	<nav>
+	<!-- <nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
@@ -29,11 +31,12 @@
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
-	</nav>
+	</nav> -->
 
-	<div class="corner">
+	<div class="corner end">
 		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
+			<img src={google} alt="GitHub" />
+			<p>Sign In With Google</p>
 		</a>
 	</div>
 </header>
@@ -41,12 +44,13 @@
 <style>
 	header {
 		display: flex;
+		margin-left: 1em;
+		margin-right: 1em;
 		justify-content: space-between;
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		height: 4em;
 	}
 
 	.corner a {
@@ -55,12 +59,28 @@
 		justify-content: center;
 		width: 100%;
 		height: 100%;
+		text-decoration: none;	
 	}
 
-	.corner img {
+
+	.corner.start img {
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
+	}
+
+	.corner.end img {
+		width: 1.7em;
+		margin-right: 0.3em;
+	}
+
+	.corner.end a {
+		background-color: var(--color-bg-3);
+		box-shadow: 0.05em 0.05em 0.2em gray;
+		border-radius: 0.5em;
+		margin: 0.3em 0.4em;
+		
+		color: var(--color-text);
 	}
 
 	nav {
